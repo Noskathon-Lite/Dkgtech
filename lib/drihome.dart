@@ -1,5 +1,7 @@
+//import 'package:ambulance/drilogin.dart';
+//import 'package:ambulance/drisign.dart';
 import 'package:ambulance/drilogin.dart';
-import 'package:ambulance/drisign.dart';
+import 'package:ambulance/drisignup.dart';
 import 'package:flutter/material.dart';
 
 class Drihomepage extends StatelessWidget {
@@ -76,7 +78,7 @@ class Drihomepage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Drisign()),
+                      MaterialPageRoute(builder: (context) => Drisignup()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
