@@ -1,4 +1,4 @@
-import 'package:ambulance/userlogin.dart';
+import 'package:ambulance/homepage.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -7,102 +7,61 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Ambulance tracker'),
-        backgroundColor: Colors.redAccent,
-      ),
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.grey,
       body: Stack(
-        children: [
+        children: [ // Background Image
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/image.png'),
-                fit: BoxFit.cover,
+                image: NetworkImage("https://img.freepik.com/premium-vector/blob-doodle-frame-blue-template_525160-11761.jpg?semt=ais_hybrid"), // Background image path
+                fit: BoxFit.cover, // Ensure the image covers the entire screen
               ),
             ),
-          ),
+          ),// Main Content
           Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Logo and title section
-                Container(
-                  padding: EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                        color: const Color.fromARGB(255, 29, 18, 1), width: 0),
-                    borderRadius: BorderRadius.circular(122),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(width: 10),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Ambulance Tracker',
-                            style: TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
-                              color: const Color.fromARGB(255, 46, 5, 25),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+              mainAxisAlignment: MainAxisAlignment.center, // Center content vertically
+              children: [ // Title Text
+                Text(
+                  "Role",
+                  style: TextStyle(
+                    fontSize: 50, // Large font size for the title
+                    fontWeight: FontWeight.bold, // Bold font style
+                    color: const Color.fromARGB(255, 15, 1, 17), // Black text color
                   ),
                 ),
-                SizedBox(height: 150),
-                // Login button
+                SizedBox(height: 180), // Add space below the title
+                // Button for "User" role
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
-                    );
+                   Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Homepage()),
+                );
+                    // Handle "User" button press
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    fixedSize: Size(350, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80),
-                    ),
+                    
+                   backgroundColor: Colors.amberAccent,
+                   foregroundColor: Colors.blue,
+                   
+                     fixedSize: Size(320, 50),// Fixed size for buttons
                   ),
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
+                  child: Text("User",style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold)), // Button text
                 ),
-                SizedBox(height: 80),
-                // Sign up button
+                SizedBox(height: 45), // Add space between buttons
+                
                 ElevatedButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //  context,
-                    //   MaterialPageRoute(builder: (context) => Signup()),
-                    // );
+                
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.lightBlue,
-                    fixedSize: Size(350, 50),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80),
-                    ),
+                     // Button text color
+                     backgroundColor: Colors.green,
+                     foregroundColor: Colors.brown,
+                    fixedSize: Size(320, 50), // Fixed size for buttons
                   ),
-                  child: Text(
-                    'Sign up',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
+                  child: Text("Driver",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),), // Button text
                 ),
               ],
             ),
