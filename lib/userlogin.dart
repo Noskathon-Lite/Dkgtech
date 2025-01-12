@@ -1,3 +1,4 @@
+import 'package:ambulance/userdashboard.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -7,8 +8,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ambulance Tracking'),
-        backgroundColor: Colors.redAccent,
+        title: Text('Login Page for User'),
+        backgroundColor: const Color.fromARGB(255, 82, 220, 255),
       ),
       backgroundColor: const Color.fromARGB(115, 165, 164, 160),
       body: Stack(
@@ -16,9 +17,9 @@ class LoginPage extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                    'assets/image.png'), // Replace with your background image path
-                fit: BoxFit.cover,
+                image: NetworkImage(
+                    "https://img.freepik.com/premium-vector/blob-doodle-frame-blue-template_525160-11761.jpg?semt=ais_hybrid"), // Background image path
+                fit: BoxFit.cover, // Ensure the image covers the entire screen
               ),
             ),
           ),
@@ -79,11 +80,11 @@ class LoginPage extends StatelessWidget {
                   SizedBox(height: 90),
                   ElevatedButton(
                     onPressed: () {
-                      //                       Navigator.push(
-                      //   context,
-                      // MaterialPageRoute(builder: (context) => Dashboard()),
-                      //);
-                      // Add login logic here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Userdashboard()),
+                      );
                     },
                     child: Text('Login'),
                     style: ElevatedButton.styleFrom(
